@@ -34,7 +34,7 @@ class receive:
         except:
             pass
         n = now()
-        rst = Msg.find(what = "id,sender,msg,timestamp", where="timestamp>'"+ts+"'")
+        rst = Msg.find(what = "id,sender,msg,timestamp", where="timestamp>'"+ts+"'" ,order="timestamp DESC")
         msg = ''
         for rcd in rst:
             msg += rcd.SENDER+"["+rcd.TIMESTAMP+"]:\n"+rcd.MSG
